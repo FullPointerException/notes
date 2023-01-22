@@ -1,0 +1,66 @@
+* References
+** Official
+[[https://doc.rust-lang.org/book/title-page.html][Rust Book]]
+** Unofficial
+[[https://github.com/rust-lang/rust-mode][Emacs rust-mode plugin]]
+* Installation
+Steps followed from [[https://doc.rust-lang.org/book/ch01-01-installation.html][Installation chapter of the Rust Book]].
+
+Download and run the rustup tool
+#+begin_src sh
+curl --proto '=https' --tlsv1.3 https://sh.rustup.rs -sSf | sh
+#+end_src
+
+Choose =1) Proceed with installation (default)=
+
+** Rustfmt
+#+begin_src sh
+rustup component add rustfmt
+#+end_src
+* Commands
+Check installation
+#+begin_src sh
+rustc --version
+#+end_src
+
+#+begin_src sh
+cargo --version
+#+end_src
+
+Open docs
+#+begin_src sh
+rustup doc
+#+end_src
+
+Cargo Project creation
+#+begin_src sh
+cargo new <project_name>
+cd <project_name>
+#+end_src
+
+Cargo building
+#+begin_src sh
+cargo build
+#+end_src
+
+Cargo build + run
+#+begin_src sh
+cargo run
+#+end_src
+
+Cargo check code compiles without building executable
+#+begin_src sh
+cargo check
+#+end_src
+
+* Emacs integration
+ Compile:  ~C-c C-c C-u~
+Check: ~C-c C-c C-k~
+Test: ~C-c C-c C-t~
+Run: ~C-c C-c C-r~
+Run clippy (linter): ~C-c C-c C-l~
+
+* Packages to investigate
+
+** cargo-edit
+

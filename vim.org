@@ -1,0 +1,7 @@
+* Filtering files
+** Removing all lines without string
+To remove all lines without "token"
+#+NAME:remove missing
+#+BEGIN_SRC
+:g!/token/d
+#+END_SRC

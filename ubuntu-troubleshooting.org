@@ -1,0 +1,20 @@
+* No network interfaces at all
+
+happened after a failed restore from suspend while in an area with no internet
+
+#+begin_src sh
+sudo lshw -C network
+#+end_src
+
+Shows network as disabled
+
+#+begin_src sh
+sudo service network-manager stop
+sudo vi /var/lib/NetworkManager/NetworkManager.state
+#+end_src
+
+Set =NetworkingEnabled=true=
+
+#+begin_src sh
+sudo service network-manager restart
+#+end_src

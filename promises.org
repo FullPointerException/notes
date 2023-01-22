@@ -1,0 +1,4 @@
+* Promises
+** Concepts
+** QtPromises
+[[https://qtpromise.netlify.app/qtpromise/getting-started.html#installation][Getting Started]] documentation

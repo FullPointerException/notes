@@ -1,0 +1,6 @@
+* Modifying files
+** Removing all audio tracks from mp4
+#+NAME: Remove all audio
+#+BEGIN_SRC sh
+ffmpeg -i input_file.mp4 -vcodec copy -an outputfile.mp4
+#+END_SRC

@@ -1,0 +1,62 @@
+* Opening files
+C-x C-f opens file finder
+C-x C-b opens buffer in new window
+C-x o switches to new window
+C-x 0 kills current window
+C-x 3 opens second window vertically
+* Buffers
+=C-x <Left>=
+=C-x <Right>=
+** Killing buffers
+*** Open buffer list
+=C-x C-b=
+*** Swap to newly opened buffer
+=C-x o=
+*** Mark buffers to edit
+=m=
+*** Mark buffers to delete
+=C-k=
+*** Execute deletion
+=x=
+
+* Navigating files
+C-n forwards a line
+C-p backwards a line
+M-f forwards a word
+M-b backwards a word
+C-f forwards a character
+C-b backwars a character
+* Searching files
+* Modifying files
+C-k kills to end of line
+M-x delete-trailing-whitespace deletes all whitespace at the end of any line
+** Copy / paste
+*** Select text
+=C-<space>=
+*** Copy selected region
+=M-w=
+*** Cut selected region
+=C-w=
+*** Paste
+=C-y=
+*** Cycle kill ring
+=M-y=
+* Emacs variables
+M-x describe-variable to get variable current value and info
+* Org-mode
+S-Left / S-Right cycles TODO
+M-Left/M-Right increase/decrease header level
+Tab cycle expand / collapse current element
+S-Tab cycle expand / collapse global
+
+*Bold*: *
+/italic/: /
+_underline_: _
+=verbatim=: =
+~code~: ~
++strike+: +
+* Links
+[[https://orgmode.org/worg/org-tutorials/org4beginners.html][Org mode beginning at the basics]]
+[[https://orgmode.org/worg/org-tutorials/org-publish-html-tutorial.html][Publishing Org-mode files to HTML]]
+[[https://dale.io/blog/automated-org-publishing.html][Automated Publishing Pipeline with Org Mode]]
+[[https://opensource.com/article/20/3/blog-emacs][How to blog with Emacs Org mode]]

@@ -1,0 +1,69 @@
+* Rewriting history
+** Rewrite history
+#+Name: rewrite
+#+BEGIN_SRC sh
+git filter-branch -f --commit-filter '
+if [ "$GIT_AUTHOR_EMAIL" = "$OLD_EMAIL" ];
+then
+GIT_AUTHOR_NAME="$NEW_NAME"
+GIT_AUTHOR_EMAIL="$NEW_EMAIL"
+GIT_COMMITTER_NAME="$NEW_NAME"
+GIT_COMMITTER_EMAIL="$NEW_EMAIL"
+git commit-tree "$@";
+else
+git commit-tree "$@";
+fi' HEAD
+#+END_SRC
+** Push to repo
+#+Name: push
+#+BEGIN_SRC sh
+ git push origin +master
+#+END_SRC
+* Tagging
+** Create simple tag and push
+#+Name: simple tag
+#+BEGIN_SRC sh
+git tag my-tag-name-v123
+git push origin --tags
+#+END_SRC
+* Merging pull requests
+Scenario: pull request for branch =feature= into branch =master=
+
+Pull the most recent version of the repository
+#+begin_src sh
+git pull
+#+end_src
+
+Checkout the source branch
+#+begin_src sh
+git checkout feature-branch
+#+end_src
+
+Pull the destination branch into the source branch
+#+begin_src sh
+git pull origin source-branch
+#+end_src
+
+Resolve the merge conflicts
+
+Commit and push the changes
+#+begin_src sh
+git add *
+git commit
+git push
+#+end_src
+* Cleaning up branches
+** List local branches that have been merged
+#+begin_src sh
+git pull
+git branch --merged
+git branch -d <branch_name_to_delete>
+#+end_src
+** Deleting old local branches after merges
+#+begin_src sh
+git remote prune origin
+#+end_src
+* Renaming remote branch
+#+begin_src sh
+git push origin origin/<old_name>:refs/heads/<new_name> :<old_name>
+#+end_src
